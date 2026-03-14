@@ -1,16 +1,18 @@
 let id = 1;
 const getId = () => id++;
 
+// Restrict access to our mock "database" to just this Model file
 const todos = [
   { id: getId(), task: "Buy groceries", isDone: false },
   { id: getId(), task: "Walk the dog", isDone: true },
   { id: getId(), task: "Read a book", isDone: false },
 ];
 
-module.exports.create = (task) => {
-  const newTask = { id: getId(), task, isDone: false };
+// Can be used like "fellowModel.create()"
+module.exports.create = (name) => {
+  const newTask = { id: getId(), name, isDOne: false };
   todos.push(newTask);
-  return { ...newTask };
+  return newTask;
 };
 
 module.exports.list = () => {
