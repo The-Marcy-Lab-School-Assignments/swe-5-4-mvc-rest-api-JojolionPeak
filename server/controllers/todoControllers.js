@@ -6,7 +6,7 @@ module.exports.listTodos = (req, res) => {
   res.send(todosList);
 };
 
-// Get One (Read)
+// Get One
 module.exports.findTodo = (req, res) => {
   const { id } = req.params;
   const todo = todoModel.find(Number(id));
