@@ -101,5 +101,9 @@ app.post("/api/todos", postToDo);
 app.patch(`/api/todos/:id`, patchToDo);
 app.delete("/api/todos/:id", deleteToDo);
 
+app.use((req, res) => {
+  res.status(404).send({ error: `Not found: ${req.originalUrl}` });
+});
+
 const port = 8080;
 app.listen(port, () => console.log(`Listening at http://localhost:${port}`));
