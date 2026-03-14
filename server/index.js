@@ -15,8 +15,8 @@ const logRoutes = (req, res, next) => {
 };
 
 app.use(logRoutes);
-app.use(express.static(pathToFrontend));
 app.use(express.json());
+app.use(express.static(pathToFrontend));
 
 ////////////////////////
 // In-Memory Database
